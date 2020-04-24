@@ -6,9 +6,6 @@ export const routes: Routes = [
     {
         path:'',
         component:PaymentPlanComponent,
-        data:{
-            title:'Requisiciones'
-        },
     }
     
     ];
@@ -17,4 +14,4 @@ export const routes: Routes = [
         imports:[RouterModule.forChild(routes)],
         exports:[RouterModule]
     })
-    export class RequisicionesCapturistaRoutingModule{}
+    export class PaymentRoutingModule{}

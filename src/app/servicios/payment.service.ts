@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 import { of } from 'rxjs';
 @Injectable()
-export class RequisicionService {
+export class PaymentService {
 
   constructor(public http: Http) {
 

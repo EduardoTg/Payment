@@ -6,11 +6,8 @@ import { Router } from '@angular/router';
 })
 export class FullLayoutComponent implements OnInit {
   public disabled: boolean = false;
-  usuario: any = {}
-  constructor(private router: Router) {
-    this.usuario = 'usuario';
+  constructor() {
   }
-
 
   public status: { isopen: boolean } = { isopen: false };
 
@@ -23,13 +20,6 @@ export class FullLayoutComponent implements OnInit {
     $event.stopPropagation();
     this.status.isopen = !this.status.isopen;
   }
-
-  cerrarSesion() {
-    window.localStorage.removeItem("usuario");
-    window.localStorage.removeItem("token");
-    this.router.navigate(['/login'])
-  }
-
 
   ngOnInit(): void { }
 }

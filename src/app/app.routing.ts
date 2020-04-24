@@ -6,20 +6,11 @@ export const routes: Routes = [
 
     {
         path: '',
-        redirectTo: 'PaymentPlans',
-        pathMatch: 'full'
-
-    },
-    {
-        path: '',
         component: FullLayoutComponent,
-        data: {
-            title: 'Inicio'
-        },
         children: [
             {
                 path: 'PaymentPlans',
-                loadChildren: './paymentPlans/paymentPlans.module#RequisicionesCapturistaModule'
+                loadChildren: './paymentPlans/paymentPlans.module#PaymentsModule'
             },
         ]
 

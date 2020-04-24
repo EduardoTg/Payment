@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { RequisicionService } from '../servicios/payment.service'
+import { PaymentService } from '../servicios/payment.service'
 import { Router, NavigationExtras } from '@angular/router'
 import { NgxSpinnerService } from "ngx-spinner"
-import swal from 'sweetalert2';
+/* import swal from 'sweetalert2'; */
 
 @Component({
-  selector: 'app-requisiciones',
+  selector: 'app-paymentPlans',
   templateUrl: './paymentPlans.component.html',
   styleUrls: ['./style.scss']
 })
@@ -13,7 +13,7 @@ export class PaymentPlanComponent implements OnInit {
   listPayment: any = []
   searchTerm: any
 
-  constructor(private router: Router, private requisicionService: RequisicionService, private spinner: NgxSpinnerService) {
+  constructor(private router: Router, private PaymentService: PaymentService, private spinner: NgxSpinnerService) {
 
   }
 
@@ -23,7 +23,7 @@ export class PaymentPlanComponent implements OnInit {
 
   getData() {
     this.spinner.show()
-    this.requisicionService.get()
+    this.PaymentService.get()
       .subscribe(res => {
         this.listPayment = res
       })
