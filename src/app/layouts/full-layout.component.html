@@ -1,0 +1,49 @@
+<header class="app-header navbar">
+    <div style="padding: 12px;">
+        <label style="color: white;font-size: 20px;letter-spacing: 6px;"><b style="text-decoration: underline">ANY</b>CLUB</label>
+    </div>
+</header>
+
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/PaymentPlans']"><i
+                            class="icon-speedometer"></i> Payments </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i>
+                        Alerts </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i> Notifications </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i> Files </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i> Chat </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i> Numbers </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active"><i class="icon-speedometer"></i> Help </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+        <br>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+</div>
+
+<footer class="app-footer">
+    Payments 2020
+</footer>

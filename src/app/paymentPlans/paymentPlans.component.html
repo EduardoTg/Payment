@@ -1,0 +1,69 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <label class="title">Payments Plans</label>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 10px;">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row pb-3">
+            <div class="col-4">
+              <label>Search</label>
+              <input class="form-control" type="text" name="searchTerm" [(ngModel)]="searchTerm">
+            </div>
+          </div>
+          <div class="row p-1">
+            <table class="table table-hover" [svData]="listPayment | filter:searchTerm" #sv="svDataTable" [svRowsOnPage]="10">
+              <thead>
+                <tr>
+                  <th style="width: 8%;">
+                    <sv-default-sorter by="title">TITLE</sv-default-sorter>
+                  </th>
+                  <th>
+                    <sv-default-sorter by="deposit">MIN INITIAL DEPOSIT.</sv-default-sorter>
+                  </th>
+                  <th>
+                    <sv-default-sorter by="plans"># TEAMS WITH PLANS</sv-default-sorter>
+                  </th>
+                  <th>
+                    <sv-default-sorter by="install"># OF INSTALLMENTS</sv-default-sorter>
+                  </th>
+                  <th>
+                    <sv-default-sorter by="payors">PAYORS USING</sv-default-sorter>
+                  </th>
+                  <th>
+                    <sv-default-sorter by="createdBy">CREATED BY</sv-default-sorter>
+                  </th>
+                  <th>CREATED ON</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let form of sv.data ">
+                  <td>{{form.title}}</td>
+                  <td>{{form.deposit | currency}}</td>
+                  <td>{{form.plans}}</td>
+                  <td>{{form.install}}</td>
+                  <td>{{form.payors}}</td>
+                  <td>{{form.createdBy}}</td>
+                  <td>{{form.createdOn}}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="7">
+                    <sv-bootstrap-paginator [rowsOnPageSet]="[5, 10, 25]"></sv-bootstrap-paginator>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-elastic-dots">
+  <p style="font-size: 20px; color: white">Loading</p>
+</ngx-spinner>
